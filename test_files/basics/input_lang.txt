@@ -1,3 +1,5 @@
 hello {{name}}
 
 My age is {{age}}
+
+{# this is a comment #}

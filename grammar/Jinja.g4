@@ -22,4 +22,5 @@ ID: ([a-z] | [A-Z] | [0-9] | '_')+ ;
 TEXT: ([a-z] | [A-Z] | [0-9] | WS)+ ;
 
 WS: [ \t]+;
+COMMENT: '{#' .*? '#}' NEWLINE ->skip;
 NEWLINE: [\r\n]+ ;

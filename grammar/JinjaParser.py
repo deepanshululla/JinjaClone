@@ -7,7 +7,7 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\b")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\t")
         buf.write("&\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\6\2\16\n")
         buf.write("\2\r\2\16\2\17\3\2\3\2\3\3\6\3\25\n\3\r\3\16\3\26\3\3")
         buf.write("\3\3\3\3\5\3\34\n\3\3\4\3\4\3\5\3\5\3\5\3\5\3\6\3\6\3")
@@ -16,7 +16,7 @@ def serializedATN():
         buf.write("\2\2\16\17\3\2\2\2\17\r\3\2\2\2\17\20\3\2\2\2\20\21\3")
         buf.write("\2\2\2\21\22\7\2\2\3\22\3\3\2\2\2\23\25\5\b\5\2\24\23")
         buf.write("\3\2\2\2\25\26\3\2\2\2\26\24\3\2\2\2\26\27\3\2\2\2\27")
-        buf.write("\30\3\2\2\2\30\31\7\b\2\2\31\34\3\2\2\2\32\34\5\n\6\2")
+        buf.write("\30\3\2\2\2\30\31\7\t\2\2\31\34\3\2\2\2\32\34\5\n\6\2")
         buf.write("\33\24\3\2\2\2\33\32\3\2\2\2\34\5\3\2\2\2\35\36\7\5\2")
         buf.write("\2\36\7\3\2\2\2\37 \7\3\2\2 !\5\6\4\2!\"\7\4\2\2\"\t\3")
         buf.write("\2\2\2#$\7\6\2\2$\13\3\2\2\2\5\17\26\33")
@@ -36,7 +36,7 @@ class JinjaParser ( Parser ):
     literalNames = [ "<INVALID>", "'{{'", "'}}'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "ID", "TEXT", 
-                      "WS", "NEWLINE" ]
+                      "WS", "COMMENT", "NEWLINE" ]
 
     RULE_program = 0
     RULE_statement = 1
@@ -53,7 +53,8 @@ class JinjaParser ( Parser ):
     ID=3
     TEXT=4
     WS=5
-    NEWLINE=6
+    COMMENT=6
+    NEWLINE=7
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
