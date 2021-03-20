@@ -1,55 +1,25 @@
 grammar Jinja;
 
-program: statement+ EOF ;
+program: statement+ EOF;
 
 statement
-    : evaluation_statement
+    : evaluation_statement + NEWLINE
+    | body
     ;
-
-
 
 expression
-    : '(' expression ')'                                        #eqPar
-    | evaluation_statement                                      #eqEvaluation
-    | left = expression operator = (MUL|DIV) right = expression #eqMUL
-    | left = expression operator = (ADD|SUB) right = expression #eqAdd
-    | ID                                                        #eqVar
-    | DOUBLE                                                    #eqDbl
-    | INT                                                       #eqInt
-    | STRING                                                    #eqStr
+    : ID
     ;
 
-
-
-evaluation_statement: ID '{{' arguments_list? '}}' NEWLINE*;
-arguments_list: expression;
-
-
-
-INT: '-'? DIGIT+ ;
-
-DOUBLE: '-'? DIGIT+ '.' DIGIT+
-    | '-'? '.' DIGIT+
+evaluation_statement
+    : '{{'expression'}}'
     ;
 
+body: TEXT;
 
-COMMENT: '{#' .*? '#}' NEWLINE ->skip;
+ID: ([a-z] | [A-Z] | [0-9] | '_')+ ;
 
-ID: ([a-z]) ([a-z] | [A-Z] | [0-9] | '_')* ;
+TEXT: ([a-z] | [A-Z] | [0-9] | WS)+ ;
 
-
-
-MUL: '*';
-DIV: '/';
-SUB: '-';
-ADD: '+';
-
-STRING : '"' (ESC|.)*? '"' ;
-
+WS: [ \t]+;
 NEWLINE: [\r\n]+ ;
-
-WS: [ \t]+ -> skip;
-
-fragment
-ESC: '\\"'|'\\\\';
-DIGIT: [0-9];
