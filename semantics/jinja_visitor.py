@@ -21,16 +21,17 @@ class JinjaAst(JinjaVisitor):
 
     def visitEvaluation_statement(self, ctx: JinjaParser.Evaluation_statementContext):
         value = self.visit(ctx.expression())
-        print(value)
+        print(value, end='')
+        return value
 
     def visitBody(self, ctx: JinjaParser.BodyContext):
         normalText = ctx.CONTENTS().getText()
         print(normalText, end='')
+        return normalText
 
     def visitEqVar(self, ctx: JinjaParser.EqVarContext):
         templated_text = ctx.ID().getText()
         if templated_text in self.ns:
-            print(self.ns[templated_text])
             return self.ns[templated_text]
 
 
