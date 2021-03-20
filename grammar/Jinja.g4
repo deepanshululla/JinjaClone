@@ -3,24 +3,47 @@ grammar Jinja;
 program: statement+ EOF;
 
 statement
-    : evaluation_statement + NEWLINE
+    : evaluation_statement
     | body
     ;
 
 expression
-    : ID
+    : left = expression operator = (MUL|DIV) right = expression #eqMUL
+    | left = expression operator = (ADD|SUB) right = expression #eqAdd
+    | DOUBLE                                                    #eqDbl
+    | INT                                                       #eqInt
+    | STRING                                                    #eqStr
+    | ID                                                        #eqVar
     ;
 
-evaluation_statement
-    : '{{'expression'}}'
+evaluation_statement : '{{'expression'}}';
+
+ID: ([a-zA-Z]) ([a-z] | [A-Z] | [0-9] | '_')* ;
+
+INT: '-'? DIGIT+ ;
+DOUBLE: '-'? DIGIT+ '.' DIGIT+
+    | '-'? '.' DIGIT+
     ;
 
-body: TEXT;
+MUL: '*';
+DIV: '/';
+SUB: '-';
+ADD: '+';
 
-ID: ([a-z] | [A-Z] | [0-9] | '_')+ ;
-
-TEXT: ([a-z] | [A-Z] | [0-9] | WS)+ ;
+STRING : '\'' (ESC|.)*? '\'' ;
 
 WS: [ \t]+;
-COMMENT: '{#' .*? '#}' NEWLINE ->skip;
+
 NEWLINE: [\r\n]+ ;
+
+COMMENT: '{#' .*? '#}' NEWLINE ->skip;
+
+
+body: CONTENTS;
+CONTENTS: ANY+ ;
+SYMBOLS: ('_'| ')' | '<' | '>' | '/' | '='| ':'| ';' | '"');
+ANY : ([a-z] |DIGIT| [A-Z] | SYMBOLS | WS| NEWLINE)+;
+fragment
+ESC: '\\"'|'\\\\';
+fragment
+DIGIT: [0-9];

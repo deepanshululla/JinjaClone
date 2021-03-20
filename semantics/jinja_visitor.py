@@ -8,6 +8,8 @@ from collections import defaultdict
 class JinjaAst(JinjaVisitor):
 
 
+
+
     def __init__(self):
         self.ns = {'name':'deepanshu', 'age':30}
 
@@ -18,13 +20,44 @@ class JinjaAst(JinjaVisitor):
         return super().visitStatement(ctx)
 
     def visitEvaluation_statement(self, ctx: JinjaParser.Evaluation_statementContext):
-        templated_text = ctx.expression().getText()
-        if templated_text in self.ns:
-            print(self.ns[templated_text])
-        else:
-            print('undefined')
+        value = self.visit(ctx.expression())
+        print(value)
 
     def visitBody(self, ctx: JinjaParser.BodyContext):
-        normalText = ctx.TEXT().getText()
+        normalText = ctx.CONTENTS().getText()
         print(normalText, end='')
+
+    def visitEqVar(self, ctx: JinjaParser.EqVarContext):
+        templated_text = ctx.ID().getText()
+        if templated_text in self.ns:
+            print(self.ns[templated_text])
+            return self.ns[templated_text]
+
+
+    def visitEqDbl(self, ctx: JinjaParser.EqDblContext):
+        return float(ctx.DOUBLE().getText())
+
+    def visitEqInt(self, ctx: JinjaParser.EqIntContext):
+        return int(ctx.INT().getText())
+
+    def visitEqStr(self, ctx: JinjaParser.EqStrContext):
+        return str(ctx.STRING().getText().strip("'"))
+
+    def visitEqAdd(self, ctx:JinjaParser.EqAddContext):
+        operator = ctx.operator
+        left = self.visit(ctx.left)
+        right = self.visit(ctx.right)
+        if operator.type == JinjaLexer.ADD:
+            return left + right
+        else:
+            return left - right
+
+    def visitEqMUL(self, ctx:JinjaParser.EqMULContext):
+        operator = ctx.operator
+        left = self.visit(ctx.left)
+        right = self.visit(ctx.right)
+        if operator.type == JinjaLexer.MUL:
+            return left * right
+        else:
+            return float(left) / float(right)
 

@@ -11,7 +11,7 @@ if __name__ == '__main__':
     args = parse_args()
 
     if not args.filename:
-        filename = './test_files/basics/input_lang.txt'
+        filename = 'test_files/basics/input_lang.html'
     else:
         filename = args.filename
     with open(filename) as f:

@@ -19,8 +19,33 @@ class JinjaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by JinjaParser#expression.
-    def visitExpression(self, ctx:JinjaParser.ExpressionContext):
+    # Visit a parse tree produced by JinjaParser#eqInt.
+    def visitEqInt(self, ctx:JinjaParser.EqIntContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by JinjaParser#eqDbl.
+    def visitEqDbl(self, ctx:JinjaParser.EqDblContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by JinjaParser#eqStr.
+    def visitEqStr(self, ctx:JinjaParser.EqStrContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by JinjaParser#eqAdd.
+    def visitEqAdd(self, ctx:JinjaParser.EqAddContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by JinjaParser#eqVar.
+    def visitEqVar(self, ctx:JinjaParser.EqVarContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by JinjaParser#eqMUL.
+    def visitEqMUL(self, ctx:JinjaParser.EqMULContext):
         return self.visitChildren(ctx)
 
 
