@@ -13,16 +13,35 @@
 
 {# this is a comment #}
 
-
+<img src="{{image}}" />
 <p>
 I can support
-1) some negative ints like {{-5}}
-2) some doubles like {{5.5}}
-3) positive ints like {{4}}
-4) strings like {{'my string'}}
-5) multipication like {{4*5}}
-5) additoon like {{4+5}}
+1 some negative ints like {{-5}}
+2 some doubles like {{5.5}}
+3 positive ints like {{4}}
+4 strings like {{'my string'}}
+5 multipication like {{4*5}}
+6 addition like {{4+5}}
 </p>
+
+
+{% if (1==1) %}
+<p> my_code_block1 </p>
+{% elif (True) %}
+<p> my_code_block2 </p>
+{% else %}
+<p> my_code_block3 </p>
+{% endif %}
+
+{% if (1==2) %}
+<p> my_code_block1 </p>
+{% elif (True) %}
+<p> my_code_block2 </p>
+{% else %}
+<p> my_code_block3 </p>
+{% endif %}
+
+
 
 
 </body>
