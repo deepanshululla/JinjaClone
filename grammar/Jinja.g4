@@ -19,8 +19,7 @@ expression
     ;
 
 boolean_expression
-    : left = boolean_expression AND right = boolean_expression                 #andExpr
-    | left = boolean_expression OR right = boolean_expression                  #orExpr
+    : '(' boolean_expression ')'                                               #eqBoolPar
     | left = expression operator=(EQ|NEQ) right = expression                   #boolEq
     | left = expression operator=(GT|GTEQ|LT|LTEQ) right = expression          #relationExpr
     | BOOL                                                                     #eqBool
@@ -33,12 +32,15 @@ evaluation_statement
 
 
 
-if_statement: if_fragment code_block (elif_statement | else_statement)? endif_fragment ;
+if_statement
+    : if_fragment code_block (elif_statement | else_statement)? endif_fragment
+    ;
+
 elif_statement: elif_fragment code_block (elif_statement | else_statement)? ;
 else_statement: else_fragment code_block ;
 
-if_fragment: IF boolean_expression BLOCK_END_IF NEWLINE? ;
-elif_fragment: ELIF boolean_expression BLOCK_END_IF NEWLINE?;
+if_fragment: IF boolean_expression BLOCK_END NEWLINE? ;
+elif_fragment: ELIF boolean_expression BLOCK_END NEWLINE?;
 else_fragment: ELSE NEWLINE? ;
 endif_fragment: ENDIF NEWLINE?;
 code_block: NEWLINE? statement NEWLINE?;
@@ -56,8 +58,6 @@ BOOL : TRUE | FALSE;
 
 
 
-OR : '||';
-AND : '&&';
 ADD : '+';
 SUB : '-';
 MUL : '*';
@@ -74,10 +74,11 @@ GTEQ : '>=';
 LTEQ : '<=';
 
 
-IF : '{% if (';
-ELIF: '{% elif (';
+IF : '{% if';
+ELIF: '{% elif';
 ENDIF: '{% endif %}';
-BLOCK_END_IF: ') %}';
+BLOCK_START: '{%';
+BLOCK_END: '%}';
 ELSE : '{% else %}';
 WHILE : 'while';
 
@@ -87,7 +88,6 @@ NEWLINE: [\r\n]+;
 
 COMMENT: '{#' .*? '#}' NEWLINE ->skip;
 
-//attribute: '"'expression')"';
 body: contents;
 contents
     : ANY+

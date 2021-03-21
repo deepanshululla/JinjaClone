@@ -5,6 +5,8 @@ from jinjaClone.grammar.JinjaVisitor import JinjaVisitor
 
 class JinjaAst(JinjaVisitor):
 
+
+
     def __init__(self):
         self.ns = {'name': 'deepanshu', 'age': 30,
                    'image': "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_1280.jpg"}
@@ -29,7 +31,6 @@ class JinjaAst(JinjaVisitor):
         templated_text = ctx.ID().getText()
         if templated_text in self.ns:
             return self.ns[templated_text]
-
 
     def visitEqDbl(self, ctx: JinjaParser.EqDblContext):
         return float(ctx.DOUBLE().getText())
@@ -87,15 +88,15 @@ class JinjaAst(JinjaVisitor):
     def visitElse_statement(self, ctx: JinjaParser.Else_statementContext):
         return self.visit(ctx.code_block())
 
-    def visitAndExpr(self, ctx: JinjaParser.AndExprContext):
-        left = self.visit(ctx.left)
-        right = self.visit(ctx.right)
-        return left and right
-
-    def visitOrExpr(self, ctx: JinjaParser.OrExprContext):
-        left = self.visit(ctx.left)
-        right = self.visit(ctx.right)
-        return left or right
+    # def visitAndExpr(self, ctx: JinjaParser.AndExprContext):
+    #     left = self.visit(ctx.left)
+    #     right = self.visit(ctx.right)
+    #     return left and right
+    #
+    # def visitOrExpr(self, ctx: JinjaParser.OrExprContext):
+    #     left = self.visit(ctx.left)
+    #     right = self.visit(ctx.right)
+    #     return left or right
 
     def visitElse_fragment(self, ctx: JinjaParser.Else_fragmentContext):
         return super().visitElse_fragment(ctx)
@@ -139,3 +140,6 @@ class JinjaAst(JinjaVisitor):
 
     def visitEqPar(self, ctx:JinjaParser.EqParContext):
         return self.visit(ctx.expression())
+
+    def visitEqBoolPar(self, ctx: JinjaParser.EqBoolParContext):
+        return self.visit(ctx.boolean_expression())
