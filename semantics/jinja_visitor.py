@@ -7,6 +7,8 @@ class JinjaAst(JinjaVisitor):
 
 
 
+
+
     def __init__(self):
         self.ns = {'name': 'deepanshu', 'age': 30,
                    'image': "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_1280.jpg"}
@@ -143,3 +145,8 @@ class JinjaAst(JinjaVisitor):
 
     def visitEqBoolPar(self, ctx: JinjaParser.EqBoolParContext):
         return self.visit(ctx.boolean_expression())
+
+    def visitAssignment_statement(self, ctx:JinjaParser.Assignment_statementContext):
+        variable_name = str(ctx.ID().getText())
+        variable_value = self.visit(ctx.expression())
+        self.ns[variable_name] = variable_value

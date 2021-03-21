@@ -19,6 +19,11 @@ class JinjaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by JinjaParser#assignment_statement.
+    def visitAssignment_statement(self, ctx:JinjaParser.Assignment_statementContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by JinjaParser#eqInt.
     def visitEqInt(self, ctx:JinjaParser.EqIntContext):
         return self.visitChildren(ctx)
@@ -54,18 +59,13 @@ class JinjaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by JinjaParser#eqBoolPar.
-    def visitEqBoolPar(self, ctx:JinjaParser.EqBoolParContext):
+    # Visit a parse tree produced by JinjaParser#relationExpr.
+    def visitRelationExpr(self, ctx:JinjaParser.RelationExprContext):
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by JinjaParser#boolEq.
     def visitBoolEq(self, ctx:JinjaParser.BoolEqContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by JinjaParser#relationExpr.
-    def visitRelationExpr(self, ctx:JinjaParser.RelationExprContext):
         return self.visitChildren(ctx)
 
 

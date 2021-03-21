@@ -6,8 +6,12 @@ statement
     : evaluation_statement
     | body
     | if_statement
+    | assignment_statement
     ;
 
+assignment_statement
+    : SET_BLOCK '('ID'='expression')' BLOCK_END NEWLINE?
+    ;
 expression
     : '(' expression ')'                                               #eqPar
     | left = expression operator = (MUL|DIV) right = expression        #eqMUL
@@ -19,9 +23,8 @@ expression
     ;
 
 boolean_expression
-    : '(' boolean_expression ')'                                               #eqBoolPar
+    : left = expression operator=(GT|GTEQ|LT|LTEQ) right = expression          #relationExpr
     | left = expression operator=(EQ|NEQ) right = expression                   #boolEq
-    | left = expression operator=(GT|GTEQ|LT|LTEQ) right = expression          #relationExpr
     | BOOL                                                                     #eqBool
     ;
 
@@ -35,16 +38,19 @@ evaluation_statement
 if_statement
     : if_fragment code_block (elif_statement | else_statement)? endif_fragment
     ;
-
 elif_statement: elif_fragment code_block (elif_statement | else_statement)? ;
 else_statement: else_fragment code_block ;
 
-if_fragment: IF boolean_expression BLOCK_END NEWLINE? ;
-elif_fragment: ELIF boolean_expression BLOCK_END NEWLINE?;
+if_fragment: IF '('boolean_expression')' BLOCK_END NEWLINE? ;
+elif_fragment: ELIF '('boolean_expression')' BLOCK_END NEWLINE?;
 else_fragment: ELSE NEWLINE? ;
 endif_fragment: ENDIF NEWLINE?;
-code_block: NEWLINE? statement NEWLINE?;
+code_block: NEWLINE? body NEWLINE?;
 
+body: contents;
+contents
+    : ANY+
+    ;
 
 ID: ([a-z]) ([a-z] | [A-Z] | [0-9] | '_')* ;
 
@@ -81,18 +87,15 @@ BLOCK_START: '{%';
 BLOCK_END: '%}';
 ELSE : '{% else %}';
 WHILE : 'while';
+SET_BLOCK: '{% set';
+//SET_BLOCK_END: '%}';
 
-WS: [ \t]+->skip;
+WS: [ \t]->skip;
 
 NEWLINE: [\r\n]+;
 
 COMMENT: '{#' .*? '#}' NEWLINE ->skip;
 
-body: contents;
-contents
-    : ANY+
-    | expression
-    ;
 SYMBOLS: ('_' | '<' | '>' | '/' | ';' | '="' | '"');
 ANY : ([a-zA-Z0-9] | SYMBOLS |NEWLINE | [ \t])+;
 
