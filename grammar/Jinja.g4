@@ -1,6 +1,6 @@
 grammar Jinja;
 
-program: statement+ EOF;
+program: statement*? EOF;
 
 statement
     : evaluation_statement
@@ -23,7 +23,8 @@ expression
     ;
 
 boolean_expression
-    : left = expression operator=(GT|GTEQ|LT|LTEQ) right = expression          #relationExpr
+    : '(' boolean_expression ')'                                               #eqBoolPar
+    | left = expression operator=(GT|GTEQ|LT|LTEQ) right = expression          #relationExpr
     | left = expression operator=(EQ|NEQ) right = expression                   #boolEq
     | BOOL                                                                     #eqBool
     ;
@@ -88,7 +89,6 @@ BLOCK_END: '%}';
 ELSE : '{% else %}';
 WHILE : 'while';
 SET_BLOCK: '{% set';
-//SET_BLOCK_END: '%}';
 
 WS: [ \t]->skip;
 

@@ -59,6 +59,11 @@ class JinjaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by JinjaParser#eqBoolPar.
+    def visitEqBoolPar(self, ctx:JinjaParser.EqBoolParContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by JinjaParser#relationExpr.
     def visitRelationExpr(self, ctx:JinjaParser.RelationExprContext):
         return self.visitChildren(ctx)
