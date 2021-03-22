@@ -54,7 +54,7 @@ contents
     | TEXT+
     ;
 
-html_element: HTML_TAG_OPEN statement*? NEWLINE*? HTML_TAG_CLOSE;
+html_element: HTML_TAG_OPEN statement+ NEWLINE*? HTML_TAG_CLOSE;
 
 
 HTML_TAG_OPEN: '<'ID'>' NEWLINE?;

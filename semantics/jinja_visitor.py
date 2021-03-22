@@ -4,6 +4,8 @@ from jinjaClone.grammar.JinjaVisitor import JinjaVisitor
 
 
 class JinjaAst(JinjaVisitor):
+
+
     def __init__(self):
         self.ns = {'name': 'deepanshu', 'age': 30,
                    'image': "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_1280.jpg"}
@@ -20,9 +22,8 @@ class JinjaAst(JinjaVisitor):
         return value
 
     def visitBody(self, ctx: JinjaParser.BodyContext):
-        normalText = ctx.contents().getText()
-        print(normalText, end='')
-        return normalText
+        contents = self.visit(ctx.contents())
+        return contents
 
     def visitEqVar(self, ctx: JinjaParser.EqVarContext):
         templated_text = ctx.ID().getText()
@@ -133,7 +134,11 @@ class JinjaAst(JinjaVisitor):
             return left <= right
 
     def visitContents(self, ctx: JinjaParser.ContentsContext):
-        return super().visitContents(ctx)
+        if ctx.html_element():
+            return self.visit(ctx.html_element())
+        if ctx.TEXT():
+            print(ctx.TEXT()[0].getText(), end='')
+
 
     def visitEqPar(self, ctx:JinjaParser.EqParContext):
         return self.visit(ctx.expression())
@@ -145,3 +150,10 @@ class JinjaAst(JinjaVisitor):
         variable_name = str(ctx.ID().getText())
         variable_value = self.visit(ctx.expression())
         self.ns[variable_name] = variable_value
+
+    def visitHtml_element(self, ctx: JinjaParser.Html_elementContext):
+        for elem in ctx.children:
+            if isinstance(elem, JinjaParser.StatementContext):
+                self.visit(elem)
+            else:
+                print(elem, end='')

@@ -184,7 +184,7 @@ class JinjaLexer(Lexer):
     NEWLINE = 35
     COMMENT = 36
     SYMBOLS = 37
-    ANY = 38
+    TEXT = 38
 
     channelNames = [ u"DEFAULT_TOKEN_CHANNEL", u"HIDDEN" ]
 
@@ -201,14 +201,15 @@ class JinjaLexer(Lexer):
             "BOOL", "ADD", "SUB", "MUL", "DIV", "NOT", "TRUE", "FALSE", 
             "EQ", "NEQ", "GT", "LT", "GTEQ", "LTEQ", "IF", "ELIF", "ENDIF", 
             "BLOCK_START", "BLOCK_END", "ELSE", "WHILE", "SET_BLOCK", "WS", 
-            "NEWLINE", "COMMENT", "SYMBOLS", "ANY" ]
+            "NEWLINE", "COMMENT", "SYMBOLS", "TEXT" ]
 
     ruleNames = [ "T__0", "T__1", "T__2", "T__3", "T__4", "HTML_TAG_OPEN", 
                   "HTML_TAG_CLOSE", "ID", "INT", "DOUBLE", "STRING", "BOOL", 
                   "ADD", "SUB", "MUL", "DIV", "NOT", "TRUE", "FALSE", "EQ", 
                   "NEQ", "GT", "LT", "GTEQ", "LTEQ", "IF", "ELIF", "ENDIF", 
                   "BLOCK_START", "BLOCK_END", "ELSE", "WHILE", "SET_BLOCK", 
-                  "WS", "NEWLINE", "COMMENT", "SYMBOLS", "ANY", "ESC", "DIGIT" ]
+                  "WS", "NEWLINE", "COMMENT", "SYMBOLS", "TEXT", "ESC", 
+                  "DIGIT" ]
 
     grammarFileName = "Jinja.g4"
 
