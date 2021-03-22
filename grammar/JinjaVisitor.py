@@ -134,5 +134,10 @@ class JinjaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by JinjaParser#html_element.
+    def visitHtml_element(self, ctx:JinjaParser.Html_elementContext):
+        return self.visitChildren(ctx)
+
+
 
 del JinjaParser

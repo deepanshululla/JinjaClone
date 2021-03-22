@@ -50,9 +50,15 @@ code_block: NEWLINE? body NEWLINE?;
 
 body: contents;
 contents
-    : ANY+
+    : html_element
+    | ANY+
     ;
 
+html_element: HTML_TAG_OPEN (contents | statement)*? NEWLINE*? HTML_TAG_CLOSE;
+
+
+HTML_TAG_OPEN: '<'ID'>' NEWLINE?;
+HTML_TAG_CLOSE: '</'ID'>'NEWLINE?;
 ID: ([a-z]) ([a-z] | [A-Z] | [0-9] | '_')* ;
 
 INT: '-'? DIGIT+ ;
@@ -96,7 +102,7 @@ NEWLINE: [\r\n]+;
 
 COMMENT: '{#' .*? '#}' NEWLINE ->skip;
 
-SYMBOLS: ('_' | '<' | '>' | '/' | ';' | '="' | '"');
+SYMBOLS: ('_'  | '/' | ';' | '="' | '"');
 ANY : ([a-zA-Z0-9] | SYMBOLS |NEWLINE | [ \t])+;
 
 fragment

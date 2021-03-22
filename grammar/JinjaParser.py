@@ -7,64 +7,77 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3&")
-        buf.write("\u00a1\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3(")
+        buf.write("\u00b6\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
-        buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\3\2\7\2$\n\2\f\2\16")
-        buf.write("\2\'\13\2\3\2\3\2\3\3\3\3\3\3\3\3\5\3/\n\3\3\4\3\4\3\4")
-        buf.write("\3\4\3\4\3\4\3\4\3\4\5\49\n\4\3\5\3\5\3\5\3\5\3\5\3\5")
-        buf.write("\3\5\3\5\3\5\5\5D\n\5\3\5\3\5\3\5\3\5\3\5\3\5\7\5L\n\5")
-        buf.write("\f\5\16\5O\13\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3")
-        buf.write("\6\3\6\3\6\3\6\5\6^\n\6\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3")
-        buf.write("\7\5\7h\n\7\3\b\3\b\3\b\3\b\5\bn\n\b\3\b\3\b\3\t\3\t\3")
-        buf.write("\t\3\t\5\tv\n\t\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3")
-        buf.write("\13\5\13\u0081\n\13\3\f\3\f\3\f\3\f\3\f\3\f\5\f\u0089")
-        buf.write("\n\f\3\r\3\r\5\r\u008d\n\r\3\16\3\16\5\16\u0091\n\16\3")
-        buf.write("\17\5\17\u0094\n\17\3\17\3\17\5\17\u0098\n\17\3\20\3\20")
-        buf.write("\3\21\6\21\u009d\n\21\r\21\16\21\u009e\3\21\3%\3\b\22")
-        buf.write("\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \2\6\3\2\17\20")
-        buf.write("\3\2\r\16\3\2\26\31\3\2\24\25\2\u00aa\2%\3\2\2\2\4.\3")
-        buf.write("\2\2\2\6\60\3\2\2\2\bC\3\2\2\2\n]\3\2\2\2\fg\3\2\2\2\16")
-        buf.write("i\3\2\2\2\20q\3\2\2\2\22w\3\2\2\2\24z\3\2\2\2\26\u0082")
-        buf.write("\3\2\2\2\30\u008a\3\2\2\2\32\u008e\3\2\2\2\34\u0093\3")
-        buf.write("\2\2\2\36\u0099\3\2\2\2 \u009c\3\2\2\2\"$\5\4\3\2#\"\3")
-        buf.write("\2\2\2$\'\3\2\2\2%&\3\2\2\2%#\3\2\2\2&(\3\2\2\2\'%\3\2")
-        buf.write("\2\2()\7\2\2\3)\3\3\2\2\2*/\5\f\7\2+/\5\36\20\2,/\5\16")
-        buf.write("\b\2-/\5\6\4\2.*\3\2\2\2.+\3\2\2\2.,\3\2\2\2.-\3\2\2\2")
-        buf.write("/\5\3\2\2\2\60\61\7!\2\2\61\62\7\3\2\2\62\63\7\b\2\2\63")
-        buf.write("\64\7\4\2\2\64\65\5\b\5\2\65\66\7\5\2\2\668\7\36\2\2\67")
-        buf.write("9\7#\2\28\67\3\2\2\289\3\2\2\29\7\3\2\2\2:;\b\5\1\2;<")
-        buf.write("\7\3\2\2<=\5\b\5\2=>\7\5\2\2>D\3\2\2\2?D\7\n\2\2@D\7\t")
-        buf.write("\2\2AD\7\13\2\2BD\7\b\2\2C:\3\2\2\2C?\3\2\2\2C@\3\2\2")
-        buf.write("\2CA\3\2\2\2CB\3\2\2\2DM\3\2\2\2EF\f\b\2\2FG\t\2\2\2G")
-        buf.write("L\5\b\5\tHI\f\7\2\2IJ\t\3\2\2JL\5\b\5\bKE\3\2\2\2KH\3")
-        buf.write("\2\2\2LO\3\2\2\2MK\3\2\2\2MN\3\2\2\2N\t\3\2\2\2OM\3\2")
-        buf.write("\2\2PQ\7\3\2\2QR\5\n\6\2RS\7\5\2\2S^\3\2\2\2TU\5\b\5\2")
-        buf.write("UV\t\4\2\2VW\5\b\5\2W^\3\2\2\2XY\5\b\5\2YZ\t\5\2\2Z[\5")
-        buf.write("\b\5\2[^\3\2\2\2\\^\7\f\2\2]P\3\2\2\2]T\3\2\2\2]X\3\2")
-        buf.write("\2\2]\\\3\2\2\2^\13\3\2\2\2_`\7\6\2\2`a\5\b\5\2ab\7\7")
-        buf.write("\2\2bh\3\2\2\2cd\7\6\2\2de\5\n\6\2ef\7\7\2\2fh\3\2\2\2")
-        buf.write("g_\3\2\2\2gc\3\2\2\2h\r\3\2\2\2ij\5\24\13\2jm\5\34\17")
-        buf.write("\2kn\5\20\t\2ln\5\22\n\2mk\3\2\2\2ml\3\2\2\2mn\3\2\2\2")
-        buf.write("no\3\2\2\2op\5\32\16\2p\17\3\2\2\2qr\5\26\f\2ru\5\34\17")
-        buf.write("\2sv\5\20\t\2tv\5\22\n\2us\3\2\2\2ut\3\2\2\2uv\3\2\2\2")
-        buf.write("v\21\3\2\2\2wx\5\30\r\2xy\5\34\17\2y\23\3\2\2\2z{\7\32")
-        buf.write("\2\2{|\7\3\2\2|}\5\n\6\2}~\7\5\2\2~\u0080\7\36\2\2\177")
-        buf.write("\u0081\7#\2\2\u0080\177\3\2\2\2\u0080\u0081\3\2\2\2\u0081")
-        buf.write("\25\3\2\2\2\u0082\u0083\7\33\2\2\u0083\u0084\7\3\2\2\u0084")
-        buf.write("\u0085\5\n\6\2\u0085\u0086\7\5\2\2\u0086\u0088\7\36\2")
-        buf.write("\2\u0087\u0089\7#\2\2\u0088\u0087\3\2\2\2\u0088\u0089")
-        buf.write("\3\2\2\2\u0089\27\3\2\2\2\u008a\u008c\7\37\2\2\u008b\u008d")
-        buf.write("\7#\2\2\u008c\u008b\3\2\2\2\u008c\u008d\3\2\2\2\u008d")
-        buf.write("\31\3\2\2\2\u008e\u0090\7\34\2\2\u008f\u0091\7#\2\2\u0090")
-        buf.write("\u008f\3\2\2\2\u0090\u0091\3\2\2\2\u0091\33\3\2\2\2\u0092")
-        buf.write("\u0094\7#\2\2\u0093\u0092\3\2\2\2\u0093\u0094\3\2\2\2")
-        buf.write("\u0094\u0095\3\2\2\2\u0095\u0097\5\36\20\2\u0096\u0098")
-        buf.write("\7#\2\2\u0097\u0096\3\2\2\2\u0097\u0098\3\2\2\2\u0098")
-        buf.write("\35\3\2\2\2\u0099\u009a\5 \21\2\u009a\37\3\2\2\2\u009b")
-        buf.write("\u009d\7&\2\2\u009c\u009b\3\2\2\2\u009d\u009e\3\2\2\2")
-        buf.write("\u009e\u009c\3\2\2\2\u009e\u009f\3\2\2\2\u009f!\3\2\2")
-        buf.write("\2\23%.8CKM]gmu\u0080\u0088\u008c\u0090\u0093\u0097\u009e")
+        buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\3\2\7\2")
+        buf.write("&\n\2\f\2\16\2)\13\2\3\2\3\2\3\3\3\3\3\3\3\3\5\3\61\n")
+        buf.write("\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4;\n\4\3\5\3\5\3")
+        buf.write("\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5F\n\5\3\5\3\5\3\5\3\5\3")
+        buf.write("\5\3\5\7\5N\n\5\f\5\16\5Q\13\5\3\6\3\6\3\6\3\6\3\6\3\6")
+        buf.write("\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6`\n\6\3\7\3\7\3\7\3\7")
+        buf.write("\3\7\3\7\3\7\3\7\5\7j\n\7\3\b\3\b\3\b\3\b\5\bp\n\b\3\b")
+        buf.write("\3\b\3\t\3\t\3\t\3\t\5\tx\n\t\3\n\3\n\3\n\3\13\3\13\3")
+        buf.write("\13\3\13\3\13\3\13\5\13\u0083\n\13\3\f\3\f\3\f\3\f\3\f")
+        buf.write("\3\f\5\f\u008b\n\f\3\r\3\r\5\r\u008f\n\r\3\16\3\16\5\16")
+        buf.write("\u0093\n\16\3\17\5\17\u0096\n\17\3\17\3\17\5\17\u009a")
+        buf.write("\n\17\3\20\3\20\3\21\3\21\6\21\u00a0\n\21\r\21\16\21\u00a1")
+        buf.write("\5\21\u00a4\n\21\3\22\3\22\3\22\7\22\u00a9\n\22\f\22\16")
+        buf.write("\22\u00ac\13\22\3\22\7\22\u00af\n\22\f\22\16\22\u00b2")
+        buf.write("\13\22\3\22\3\22\3\22\5\'\u00aa\u00b0\3\b\23\2\4\6\b\n")
+        buf.write("\f\16\20\22\24\26\30\32\34\36 \"\2\6\3\2\21\22\3\2\17")
+        buf.write("\20\3\2\30\33\3\2\26\27\2\u00c2\2\'\3\2\2\2\4\60\3\2\2")
+        buf.write("\2\6\62\3\2\2\2\bE\3\2\2\2\n_\3\2\2\2\fi\3\2\2\2\16k\3")
+        buf.write("\2\2\2\20s\3\2\2\2\22y\3\2\2\2\24|\3\2\2\2\26\u0084\3")
+        buf.write("\2\2\2\30\u008c\3\2\2\2\32\u0090\3\2\2\2\34\u0095\3\2")
+        buf.write("\2\2\36\u009b\3\2\2\2 \u00a3\3\2\2\2\"\u00a5\3\2\2\2$")
+        buf.write("&\5\4\3\2%$\3\2\2\2&)\3\2\2\2\'(\3\2\2\2\'%\3\2\2\2(*")
+        buf.write("\3\2\2\2)\'\3\2\2\2*+\7\2\2\3+\3\3\2\2\2,\61\5\f\7\2-")
+        buf.write("\61\5\36\20\2.\61\5\16\b\2/\61\5\6\4\2\60,\3\2\2\2\60")
+        buf.write("-\3\2\2\2\60.\3\2\2\2\60/\3\2\2\2\61\5\3\2\2\2\62\63\7")
+        buf.write("#\2\2\63\64\7\3\2\2\64\65\7\n\2\2\65\66\7\4\2\2\66\67")
+        buf.write("\5\b\5\2\678\7\5\2\28:\7 \2\29;\7%\2\2:9\3\2\2\2:;\3\2")
+        buf.write("\2\2;\7\3\2\2\2<=\b\5\1\2=>\7\3\2\2>?\5\b\5\2?@\7\5\2")
+        buf.write("\2@F\3\2\2\2AF\7\f\2\2BF\7\13\2\2CF\7\r\2\2DF\7\n\2\2")
+        buf.write("E<\3\2\2\2EA\3\2\2\2EB\3\2\2\2EC\3\2\2\2ED\3\2\2\2FO\3")
+        buf.write("\2\2\2GH\f\b\2\2HI\t\2\2\2IN\5\b\5\tJK\f\7\2\2KL\t\3\2")
+        buf.write("\2LN\5\b\5\bMG\3\2\2\2MJ\3\2\2\2NQ\3\2\2\2OM\3\2\2\2O")
+        buf.write("P\3\2\2\2P\t\3\2\2\2QO\3\2\2\2RS\7\3\2\2ST\5\n\6\2TU\7")
+        buf.write("\5\2\2U`\3\2\2\2VW\5\b\5\2WX\t\4\2\2XY\5\b\5\2Y`\3\2\2")
+        buf.write("\2Z[\5\b\5\2[\\\t\5\2\2\\]\5\b\5\2]`\3\2\2\2^`\7\16\2")
+        buf.write("\2_R\3\2\2\2_V\3\2\2\2_Z\3\2\2\2_^\3\2\2\2`\13\3\2\2\2")
+        buf.write("ab\7\6\2\2bc\5\b\5\2cd\7\7\2\2dj\3\2\2\2ef\7\6\2\2fg\5")
+        buf.write("\n\6\2gh\7\7\2\2hj\3\2\2\2ia\3\2\2\2ie\3\2\2\2j\r\3\2")
+        buf.write("\2\2kl\5\24\13\2lo\5\34\17\2mp\5\20\t\2np\5\22\n\2om\3")
+        buf.write("\2\2\2on\3\2\2\2op\3\2\2\2pq\3\2\2\2qr\5\32\16\2r\17\3")
+        buf.write("\2\2\2st\5\26\f\2tw\5\34\17\2ux\5\20\t\2vx\5\22\n\2wu")
+        buf.write("\3\2\2\2wv\3\2\2\2wx\3\2\2\2x\21\3\2\2\2yz\5\30\r\2z{")
+        buf.write("\5\34\17\2{\23\3\2\2\2|}\7\34\2\2}~\7\3\2\2~\177\5\n\6")
+        buf.write("\2\177\u0080\7\5\2\2\u0080\u0082\7 \2\2\u0081\u0083\7")
+        buf.write("%\2\2\u0082\u0081\3\2\2\2\u0082\u0083\3\2\2\2\u0083\25")
+        buf.write("\3\2\2\2\u0084\u0085\7\35\2\2\u0085\u0086\7\3\2\2\u0086")
+        buf.write("\u0087\5\n\6\2\u0087\u0088\7\5\2\2\u0088\u008a\7 \2\2")
+        buf.write("\u0089\u008b\7%\2\2\u008a\u0089\3\2\2\2\u008a\u008b\3")
+        buf.write("\2\2\2\u008b\27\3\2\2\2\u008c\u008e\7!\2\2\u008d\u008f")
+        buf.write("\7%\2\2\u008e\u008d\3\2\2\2\u008e\u008f\3\2\2\2\u008f")
+        buf.write("\31\3\2\2\2\u0090\u0092\7\36\2\2\u0091\u0093\7%\2\2\u0092")
+        buf.write("\u0091\3\2\2\2\u0092\u0093\3\2\2\2\u0093\33\3\2\2\2\u0094")
+        buf.write("\u0096\7%\2\2\u0095\u0094\3\2\2\2\u0095\u0096\3\2\2\2")
+        buf.write("\u0096\u0097\3\2\2\2\u0097\u0099\5\36\20\2\u0098\u009a")
+        buf.write("\7%\2\2\u0099\u0098\3\2\2\2\u0099\u009a\3\2\2\2\u009a")
+        buf.write("\35\3\2\2\2\u009b\u009c\5 \21\2\u009c\37\3\2\2\2\u009d")
+        buf.write("\u00a4\5\"\22\2\u009e\u00a0\7(\2\2\u009f\u009e\3\2\2\2")
+        buf.write("\u00a0\u00a1\3\2\2\2\u00a1\u009f\3\2\2\2\u00a1\u00a2\3")
+        buf.write("\2\2\2\u00a2\u00a4\3\2\2\2\u00a3\u009d\3\2\2\2\u00a3\u009f")
+        buf.write("\3\2\2\2\u00a4!\3\2\2\2\u00a5\u00aa\7\b\2\2\u00a6\u00a9")
+        buf.write("\5 \21\2\u00a7\u00a9\5\4\3\2\u00a8\u00a6\3\2\2\2\u00a8")
+        buf.write("\u00a7\3\2\2\2\u00a9\u00ac\3\2\2\2\u00aa\u00ab\3\2\2\2")
+        buf.write("\u00aa\u00a8\3\2\2\2\u00ab\u00b0\3\2\2\2\u00ac\u00aa\3")
+        buf.write("\2\2\2\u00ad\u00af\7%\2\2\u00ae\u00ad\3\2\2\2\u00af\u00b2")
+        buf.write("\3\2\2\2\u00b0\u00b1\3\2\2\2\u00b0\u00ae\3\2\2\2\u00b1")
+        buf.write("\u00b3\3\2\2\2\u00b2\u00b0\3\2\2\2\u00b3\u00b4\7\t\2\2")
+        buf.write("\u00b4#\3\2\2\2\27\'\60:EMO_iow\u0082\u008a\u008e\u0092")
+        buf.write("\u0095\u0099\u00a1\u00a3\u00a8\u00aa\u00b0")
         return buf.getvalue()
 
 
@@ -80,18 +93,18 @@ class JinjaParser ( Parser ):
 
     literalNames = [ "<INVALID>", "'('", "'='", "')'", "'{{'", "'}}'", "<INVALID>", 
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "'+'", "'-'", "'*'", "'/'", "'NOT'", "'True'", "'False'", 
-                     "'=='", "'!='", "'>'", "'<'", "'>='", "'<='", "'{% if'", 
-                     "'{% elif'", "'{% endif %}'", "'{%'", "'%}'", "'{% else %}'", 
-                     "'while'", "'{% set'" ]
+                     "<INVALID>", "<INVALID>", "'+'", "'-'", "'*'", "'/'", 
+                     "'NOT'", "'True'", "'False'", "'=='", "'!='", "'>'", 
+                     "'<'", "'>='", "'<='", "'{% if'", "'{% elif'", "'{% endif %}'", 
+                     "'{%'", "'%}'", "'{% else %}'", "'while'", "'{% set'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "ID", "INT", "DOUBLE", "STRING", 
-                      "BOOL", "ADD", "SUB", "MUL", "DIV", "NOT", "TRUE", 
-                      "FALSE", "EQ", "NEQ", "GT", "LT", "GTEQ", "LTEQ", 
-                      "IF", "ELIF", "ENDIF", "BLOCK_START", "BLOCK_END", 
-                      "ELSE", "WHILE", "SET_BLOCK", "WS", "NEWLINE", "COMMENT", 
-                      "SYMBOLS", "ANY" ]
+                      "<INVALID>", "<INVALID>", "HTML_TAG_OPEN", "HTML_TAG_CLOSE", 
+                      "ID", "INT", "DOUBLE", "STRING", "BOOL", "ADD", "SUB", 
+                      "MUL", "DIV", "NOT", "TRUE", "FALSE", "EQ", "NEQ", 
+                      "GT", "LT", "GTEQ", "LTEQ", "IF", "ELIF", "ENDIF", 
+                      "BLOCK_START", "BLOCK_END", "ELSE", "WHILE", "SET_BLOCK", 
+                      "WS", "NEWLINE", "COMMENT", "SYMBOLS", "ANY" ]
 
     RULE_program = 0
     RULE_statement = 1
@@ -109,12 +122,13 @@ class JinjaParser ( Parser ):
     RULE_code_block = 13
     RULE_body = 14
     RULE_contents = 15
+    RULE_html_element = 16
 
     ruleNames =  [ "program", "statement", "assignment_statement", "expression", 
                    "boolean_expression", "evaluation_statement", "if_statement", 
                    "elif_statement", "else_statement", "if_fragment", "elif_fragment", 
                    "else_fragment", "endif_fragment", "code_block", "body", 
-                   "contents" ]
+                   "contents", "html_element" ]
 
     EOF = Token.EOF
     T__0=1
@@ -122,37 +136,39 @@ class JinjaParser ( Parser ):
     T__2=3
     T__3=4
     T__4=5
-    ID=6
-    INT=7
-    DOUBLE=8
-    STRING=9
-    BOOL=10
-    ADD=11
-    SUB=12
-    MUL=13
-    DIV=14
-    NOT=15
-    TRUE=16
-    FALSE=17
-    EQ=18
-    NEQ=19
-    GT=20
-    LT=21
-    GTEQ=22
-    LTEQ=23
-    IF=24
-    ELIF=25
-    ENDIF=26
-    BLOCK_START=27
-    BLOCK_END=28
-    ELSE=29
-    WHILE=30
-    SET_BLOCK=31
-    WS=32
-    NEWLINE=33
-    COMMENT=34
-    SYMBOLS=35
-    ANY=36
+    HTML_TAG_OPEN=6
+    HTML_TAG_CLOSE=7
+    ID=8
+    INT=9
+    DOUBLE=10
+    STRING=11
+    BOOL=12
+    ADD=13
+    SUB=14
+    MUL=15
+    DIV=16
+    NOT=17
+    TRUE=18
+    FALSE=19
+    EQ=20
+    NEQ=21
+    GT=22
+    LT=23
+    GTEQ=24
+    LTEQ=25
+    IF=26
+    ELIF=27
+    ENDIF=28
+    BLOCK_START=29
+    BLOCK_END=30
+    ELSE=31
+    WHILE=32
+    SET_BLOCK=33
+    WS=34
+    NEWLINE=35
+    COMMENT=36
+    SYMBOLS=37
+    ANY=38
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -196,18 +212,18 @@ class JinjaParser ( Parser ):
         self.enterRule(localctx, 0, self.RULE_program)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 35
+            self.state = 37
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,0,self._ctx)
             while _alt!=1 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1+1:
-                    self.state = 32
+                    self.state = 34
                     self.statement() 
-                self.state = 37
+                self.state = 39
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,0,self._ctx)
 
-            self.state = 38
+            self.state = 40
             self.match(JinjaParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
@@ -256,27 +272,27 @@ class JinjaParser ( Parser ):
         localctx = JinjaParser.StatementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_statement)
         try:
-            self.state = 44
+            self.state = 46
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [JinjaParser.T__3]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 40
+                self.state = 42
                 self.evaluation_statement()
                 pass
-            elif token in [JinjaParser.ANY]:
+            elif token in [JinjaParser.HTML_TAG_OPEN, JinjaParser.ANY]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 41
+                self.state = 43
                 self.body()
                 pass
             elif token in [JinjaParser.IF]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 42
+                self.state = 44
                 self.if_statement()
                 pass
             elif token in [JinjaParser.SET_BLOCK]:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 43
+                self.state = 45
                 self.assignment_statement()
                 pass
             else:
@@ -328,28 +344,27 @@ class JinjaParser ( Parser ):
 
         localctx = JinjaParser.Assignment_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_assignment_statement)
-        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 46
-            self.match(JinjaParser.SET_BLOCK)
-            self.state = 47
-            self.match(JinjaParser.T__0)
             self.state = 48
-            self.match(JinjaParser.ID)
+            self.match(JinjaParser.SET_BLOCK)
             self.state = 49
-            self.match(JinjaParser.T__1)
+            self.match(JinjaParser.T__0)
             self.state = 50
-            self.expression(0)
+            self.match(JinjaParser.ID)
             self.state = 51
-            self.match(JinjaParser.T__2)
+            self.match(JinjaParser.T__1)
             self.state = 52
-            self.match(JinjaParser.BLOCK_END)
+            self.expression(0)
+            self.state = 53
+            self.match(JinjaParser.T__2)
             self.state = 54
+            self.match(JinjaParser.BLOCK_END)
+            self.state = 56
             self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            if _la==JinjaParser.NEWLINE:
-                self.state = 53
+            la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
+            if la_ == 1:
+                self.state = 55
                 self.match(JinjaParser.NEWLINE)
 
 
@@ -522,7 +537,7 @@ class JinjaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 65
+            self.state = 67
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [JinjaParser.T__0]:
@@ -530,46 +545,46 @@ class JinjaParser ( Parser ):
                 self._ctx = localctx
                 _prevctx = localctx
 
-                self.state = 57
-                self.match(JinjaParser.T__0)
-                self.state = 58
-                self.expression(0)
                 self.state = 59
+                self.match(JinjaParser.T__0)
+                self.state = 60
+                self.expression(0)
+                self.state = 61
                 self.match(JinjaParser.T__2)
                 pass
             elif token in [JinjaParser.DOUBLE]:
                 localctx = JinjaParser.EqDblContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 61
+                self.state = 63
                 self.match(JinjaParser.DOUBLE)
                 pass
             elif token in [JinjaParser.INT]:
                 localctx = JinjaParser.EqIntContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 62
+                self.state = 64
                 self.match(JinjaParser.INT)
                 pass
             elif token in [JinjaParser.STRING]:
                 localctx = JinjaParser.EqStrContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 63
+                self.state = 65
                 self.match(JinjaParser.STRING)
                 pass
             elif token in [JinjaParser.ID]:
                 localctx = JinjaParser.EqVarContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 64
+                self.state = 66
                 self.match(JinjaParser.ID)
                 pass
             else:
                 raise NoViableAltException(self)
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 75
+            self.state = 77
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,5,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -577,18 +592,18 @@ class JinjaParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 73
+                    self.state = 75
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
                     if la_ == 1:
                         localctx = JinjaParser.EqMULContext(self, JinjaParser.ExpressionContext(self, _parentctx, _parentState))
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 67
+                        self.state = 69
                         if not self.precpred(self._ctx, 6):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 6)")
-                        self.state = 68
+                        self.state = 70
                         localctx.operator = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not(_la==JinjaParser.MUL or _la==JinjaParser.DIV):
@@ -596,7 +611,7 @@ class JinjaParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 69
+                        self.state = 71
                         localctx.right = self.expression(7)
                         pass
 
@@ -604,11 +619,11 @@ class JinjaParser ( Parser ):
                         localctx = JinjaParser.EqAddContext(self, JinjaParser.ExpressionContext(self, _parentctx, _parentState))
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 70
+                        self.state = 72
                         if not self.precpred(self._ctx, 5):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
-                        self.state = 71
+                        self.state = 73
                         localctx.operator = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not(_la==JinjaParser.ADD or _la==JinjaParser.SUB):
@@ -616,12 +631,12 @@ class JinjaParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 72
+                        self.state = 74
                         localctx.right = self.expression(6)
                         pass
 
              
-                self.state = 77
+                self.state = 79
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,5,self._ctx)
 
@@ -747,26 +762,26 @@ class JinjaParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_boolean_expression)
         self._la = 0 # Token type
         try:
-            self.state = 91
+            self.state = 93
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,6,self._ctx)
             if la_ == 1:
                 localctx = JinjaParser.EqBoolParContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 78
-                self.match(JinjaParser.T__0)
-                self.state = 79
-                self.boolean_expression()
                 self.state = 80
+                self.match(JinjaParser.T__0)
+                self.state = 81
+                self.boolean_expression()
+                self.state = 82
                 self.match(JinjaParser.T__2)
                 pass
 
             elif la_ == 2:
                 localctx = JinjaParser.RelationExprContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 82
+                self.state = 84
                 localctx.left = self.expression(0)
-                self.state = 83
+                self.state = 85
                 localctx.operator = self._input.LT(1)
                 _la = self._input.LA(1)
                 if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << JinjaParser.GT) | (1 << JinjaParser.LT) | (1 << JinjaParser.GTEQ) | (1 << JinjaParser.LTEQ))) != 0)):
@@ -774,16 +789,16 @@ class JinjaParser ( Parser ):
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 84
+                self.state = 86
                 localctx.right = self.expression(0)
                 pass
 
             elif la_ == 3:
                 localctx = JinjaParser.BoolEqContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
-                self.state = 86
+                self.state = 88
                 localctx.left = self.expression(0)
-                self.state = 87
+                self.state = 89
                 localctx.operator = self._input.LT(1)
                 _la = self._input.LA(1)
                 if not(_la==JinjaParser.EQ or _la==JinjaParser.NEQ):
@@ -791,14 +806,14 @@ class JinjaParser ( Parser ):
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 88
+                self.state = 90
                 localctx.right = self.expression(0)
                 pass
 
             elif la_ == 4:
                 localctx = JinjaParser.EqBoolContext(self, localctx)
                 self.enterOuterAlt(localctx, 4)
-                self.state = 90
+                self.state = 92
                 self.match(JinjaParser.BOOL)
                 pass
 
@@ -842,26 +857,26 @@ class JinjaParser ( Parser ):
         localctx = JinjaParser.Evaluation_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_evaluation_statement)
         try:
-            self.state = 101
+            self.state = 103
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,7,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 93
-                self.match(JinjaParser.T__3)
-                self.state = 94
-                self.expression(0)
                 self.state = 95
+                self.match(JinjaParser.T__3)
+                self.state = 96
+                self.expression(0)
+                self.state = 97
                 self.match(JinjaParser.T__4)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 97
-                self.match(JinjaParser.T__3)
-                self.state = 98
-                self.boolean_expression()
                 self.state = 99
+                self.match(JinjaParser.T__3)
+                self.state = 100
+                self.boolean_expression()
+                self.state = 101
                 self.match(JinjaParser.T__4)
                 pass
 
@@ -918,26 +933,26 @@ class JinjaParser ( Parser ):
         self.enterRule(localctx, 12, self.RULE_if_statement)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 103
+            self.state = 105
             self.if_fragment()
-            self.state = 104
+            self.state = 106
             self.code_block()
-            self.state = 107
+            self.state = 109
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [JinjaParser.ELIF]:
-                self.state = 105
+                self.state = 107
                 self.elif_statement()
                 pass
             elif token in [JinjaParser.ELSE]:
-                self.state = 106
+                self.state = 108
                 self.else_statement()
                 pass
             elif token in [JinjaParser.ENDIF]:
                 pass
             else:
                 pass
-            self.state = 109
+            self.state = 111
             self.endif_fragment()
         except RecognitionException as re:
             localctx.exception = re
@@ -987,19 +1002,19 @@ class JinjaParser ( Parser ):
         self.enterRule(localctx, 14, self.RULE_elif_statement)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 111
+            self.state = 113
             self.elif_fragment()
-            self.state = 112
+            self.state = 114
             self.code_block()
-            self.state = 115
+            self.state = 117
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [JinjaParser.ELIF]:
-                self.state = 113
+                self.state = 115
                 self.elif_statement()
                 pass
             elif token in [JinjaParser.ELSE]:
-                self.state = 114
+                self.state = 116
                 self.else_statement()
                 pass
             elif token in [JinjaParser.ENDIF]:
@@ -1046,9 +1061,9 @@ class JinjaParser ( Parser ):
         self.enterRule(localctx, 16, self.RULE_else_statement)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 117
+            self.state = 119
             self.else_fragment()
-            self.state = 118
+            self.state = 120
             self.code_block()
         except RecognitionException as re:
             localctx.exception = re
@@ -1095,21 +1110,21 @@ class JinjaParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_if_fragment)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 120
-            self.match(JinjaParser.IF)
-            self.state = 121
-            self.match(JinjaParser.T__0)
             self.state = 122
-            self.boolean_expression()
+            self.match(JinjaParser.IF)
             self.state = 123
-            self.match(JinjaParser.T__2)
+            self.match(JinjaParser.T__0)
             self.state = 124
-            self.match(JinjaParser.BLOCK_END)
+            self.boolean_expression()
+            self.state = 125
+            self.match(JinjaParser.T__2)
             self.state = 126
+            self.match(JinjaParser.BLOCK_END)
+            self.state = 128
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,10,self._ctx)
             if la_ == 1:
-                self.state = 125
+                self.state = 127
                 self.match(JinjaParser.NEWLINE)
 
 
@@ -1158,21 +1173,21 @@ class JinjaParser ( Parser ):
         self.enterRule(localctx, 20, self.RULE_elif_fragment)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 128
-            self.match(JinjaParser.ELIF)
-            self.state = 129
-            self.match(JinjaParser.T__0)
             self.state = 130
-            self.boolean_expression()
+            self.match(JinjaParser.ELIF)
             self.state = 131
-            self.match(JinjaParser.T__2)
+            self.match(JinjaParser.T__0)
             self.state = 132
-            self.match(JinjaParser.BLOCK_END)
+            self.boolean_expression()
+            self.state = 133
+            self.match(JinjaParser.T__2)
             self.state = 134
+            self.match(JinjaParser.BLOCK_END)
+            self.state = 136
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
             if la_ == 1:
-                self.state = 133
+                self.state = 135
                 self.match(JinjaParser.NEWLINE)
 
 
@@ -1214,13 +1229,13 @@ class JinjaParser ( Parser ):
         self.enterRule(localctx, 22, self.RULE_else_fragment)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 136
-            self.match(JinjaParser.ELSE)
             self.state = 138
+            self.match(JinjaParser.ELSE)
+            self.state = 140
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,12,self._ctx)
             if la_ == 1:
-                self.state = 137
+                self.state = 139
                 self.match(JinjaParser.NEWLINE)
 
 
@@ -1260,16 +1275,15 @@ class JinjaParser ( Parser ):
 
         localctx = JinjaParser.Endif_fragmentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 24, self.RULE_endif_fragment)
-        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 140
-            self.match(JinjaParser.ENDIF)
             self.state = 142
+            self.match(JinjaParser.ENDIF)
+            self.state = 144
             self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            if _la==JinjaParser.NEWLINE:
-                self.state = 141
+            la_ = self._interp.adaptivePredict(self._input,13,self._ctx)
+            if la_ == 1:
+                self.state = 143
                 self.match(JinjaParser.NEWLINE)
 
 
@@ -1316,21 +1330,21 @@ class JinjaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 145
+            self.state = 147
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==JinjaParser.NEWLINE:
-                self.state = 144
+                self.state = 146
                 self.match(JinjaParser.NEWLINE)
 
 
-            self.state = 147
-            self.body()
             self.state = 149
+            self.body()
+            self.state = 151
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==JinjaParser.NEWLINE:
-                self.state = 148
+                self.state = 150
                 self.match(JinjaParser.NEWLINE)
 
 
@@ -1370,7 +1384,7 @@ class JinjaParser ( Parser ):
         self.enterRule(localctx, 28, self.RULE_body)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 151
+            self.state = 153
             self.contents()
         except RecognitionException as re:
             localctx.exception = re
@@ -1385,6 +1399,10 @@ class JinjaParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
+        def html_element(self):
+            return self.getTypedRuleContext(JinjaParser.Html_elementContext,0)
+
 
         def ANY(self, i:int=None):
             if i is None:
@@ -1409,21 +1427,130 @@ class JinjaParser ( Parser ):
         localctx = JinjaParser.ContentsContext(self, self._ctx, self.state)
         self.enterRule(localctx, 30, self.RULE_contents)
         try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 154 
+            self.state = 161
             self._errHandler.sync(self)
-            _alt = 1
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt == 1:
-                    self.state = 153
-                    self.match(JinjaParser.ANY)
-
-                else:
-                    raise NoViableAltException(self)
-                self.state = 156 
+            token = self._input.LA(1)
+            if token in [JinjaParser.HTML_TAG_OPEN]:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 155
+                self.html_element()
+                pass
+            elif token in [JinjaParser.ANY]:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 157 
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,16,self._ctx)
+                _alt = 1
+                while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                    if _alt == 1:
+                        self.state = 156
+                        self.match(JinjaParser.ANY)
 
+                    else:
+                        raise NoViableAltException(self)
+                    self.state = 159 
+                    self._errHandler.sync(self)
+                    _alt = self._interp.adaptivePredict(self._input,16,self._ctx)
+
+                pass
+            else:
+                raise NoViableAltException(self)
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+    class Html_elementContext(ParserRuleContext):
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def HTML_TAG_OPEN(self):
+            return self.getToken(JinjaParser.HTML_TAG_OPEN, 0)
+
+        def HTML_TAG_CLOSE(self):
+            return self.getToken(JinjaParser.HTML_TAG_CLOSE, 0)
+
+        def contents(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(JinjaParser.ContentsContext)
+            else:
+                return self.getTypedRuleContext(JinjaParser.ContentsContext,i)
+
+
+        def statement(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(JinjaParser.StatementContext)
+            else:
+                return self.getTypedRuleContext(JinjaParser.StatementContext,i)
+
+
+        def NEWLINE(self, i:int=None):
+            if i is None:
+                return self.getTokens(JinjaParser.NEWLINE)
+            else:
+                return self.getToken(JinjaParser.NEWLINE, i)
+
+        def getRuleIndex(self):
+            return JinjaParser.RULE_html_element
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitHtml_element" ):
+                return visitor.visitHtml_element(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def html_element(self):
+
+        localctx = JinjaParser.Html_elementContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 32, self.RULE_html_element)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 163
+            self.match(JinjaParser.HTML_TAG_OPEN)
+            self.state = 168
+            self._errHandler.sync(self)
+            _alt = self._interp.adaptivePredict(self._input,19,self._ctx)
+            while _alt!=1 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1+1:
+                    self.state = 166
+                    self._errHandler.sync(self)
+                    la_ = self._interp.adaptivePredict(self._input,18,self._ctx)
+                    if la_ == 1:
+                        self.state = 164
+                        self.contents()
+                        pass
+
+                    elif la_ == 2:
+                        self.state = 165
+                        self.statement()
+                        pass
+
+             
+                self.state = 170
+                self._errHandler.sync(self)
+                _alt = self._interp.adaptivePredict(self._input,19,self._ctx)
+
+            self.state = 174
+            self._errHandler.sync(self)
+            _alt = self._interp.adaptivePredict(self._input,20,self._ctx)
+            while _alt!=1 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1+1:
+                    self.state = 171
+                    self.match(JinjaParser.NEWLINE) 
+                self.state = 176
+                self._errHandler.sync(self)
+                _alt = self._interp.adaptivePredict(self._input,20,self._ctx)
+
+            self.state = 177
+            self.match(JinjaParser.HTML_TAG_CLOSE)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
