@@ -11,6 +11,8 @@ import json
 def parse_args():
     parser = ArgumentParser(description='Pythonic DSL interpreter')
     parser.add_argument("-d","--directory", type=str, help="Directory to parse")
+    parser.add_argument("--write", default=False, action="store_true",
+                    help="Write to file")
     return parser.parse_args()
 
 def parse_json(json_file):
@@ -44,5 +46,8 @@ if __name__ == '__main__':
         parser = JinjaParser(tokens)
         visitor = JinjaAst(code_gen, namespace=json_contents)
         visitor.visit(parser.program())
-        # print(code_gen.generate_code())
-        code_gen.write_to(f"{directory}/outputfile.html")
+        if args.write:
+
+            code_gen.write_to(f"{directory}/outputfile.html")
+        else:
+            print(code_gen.generate_code())

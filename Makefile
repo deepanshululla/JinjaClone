@@ -1,4 +1,4 @@
-NAME := pythonic_dsl
+NAME := jinja_clone
 TAG := $(shell git log -1 --pretty=%h)
 IMG := ${NAME}:${TAG}
 LATEST := ${NAME}:latest
@@ -14,3 +14,6 @@ docker_build:
 
 run:
 	PYTHONPATH=.. python ./bin/lang_bin.py -f ./test_input.txt
+
+docker_run: docker_build
+	docker container run ${IMG}
