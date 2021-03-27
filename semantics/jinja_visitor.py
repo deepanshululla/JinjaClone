@@ -4,8 +4,6 @@ from jinjaClone.grammar.JinjaVisitor import JinjaVisitor
 
 
 class JinjaAst(JinjaVisitor):
-
-
     def __init__(self):
         self.ns = {'name': 'deepanshu', 'age': 30,
                    'image': "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_1280.jpg"}
@@ -157,3 +155,18 @@ class JinjaAst(JinjaVisitor):
                 self.visit(elem)
             else:
                 print(elem, end='')
+
+    def visitWhile_statement(self, ctx: JinjaParser.While_statementContext):
+        while self.visit(ctx.while_fragment()):
+            for statement in ctx.statement():
+                if isinstance(statement, JinjaParser.StatementContext):
+                    self.visit(statement)
+                else:
+                    print(statement, end='')
+        return super().visitWhile_statement(ctx)
+
+    def visitWhile_fragment(self, ctx: JinjaParser.While_fragmentContext):
+        return self.visit(ctx.boolean_expression())
+
+    def visitEndwhile_fragment(self, ctx: JinjaParser.Endwhile_fragmentContext):
+        return super().visitEndwhile_fragment(ctx)

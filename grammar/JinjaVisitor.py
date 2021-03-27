@@ -124,6 +124,21 @@ class JinjaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by JinjaParser#while_statement.
+    def visitWhile_statement(self, ctx:JinjaParser.While_statementContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by JinjaParser#while_fragment.
+    def visitWhile_fragment(self, ctx:JinjaParser.While_fragmentContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by JinjaParser#endwhile_fragment.
+    def visitEndwhile_fragment(self, ctx:JinjaParser.Endwhile_fragmentContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by JinjaParser#body.
     def visitBody(self, ctx:JinjaParser.BodyContext):
         return self.visitChildren(ctx)

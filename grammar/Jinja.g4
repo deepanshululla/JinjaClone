@@ -7,6 +7,7 @@ statement
     | body
     | if_statement
     | assignment_statement
+    | while_statement
     ;
 
 assignment_statement
@@ -47,6 +48,11 @@ elif_fragment: ELIF '('boolean_expression')' BLOCK_END NEWLINE?;
 else_fragment: ELSE NEWLINE? ;
 endif_fragment: ENDIF NEWLINE?;
 code_block: NEWLINE? body NEWLINE?;
+
+while_statement: while_fragment statement*? endwhile_fragment ;
+
+while_fragment: WHILE '('boolean_expression')' BLOCK_END NEWLINE? ;
+endwhile_fragment: END_WHILE NEWLINE?;
 
 body: contents;
 contents
@@ -93,7 +99,8 @@ ENDIF: '{% endif %}';
 BLOCK_START: '{%';
 BLOCK_END: '%}';
 ELSE : '{% else %}';
-WHILE : 'while';
+WHILE : '{% while';
+END_WHILE: '{% endwhile %}';
 SET_BLOCK: '{% set';
 
 WS: [ \t]->skip;

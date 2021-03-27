@@ -43,7 +43,10 @@ I can support
 
 
 {% set (i=0) %}
-
+{% while (i<5) %}
+<p> my line {{i}} </p>
+{% set (i=i+1) %}
+{% endwhile %}
 
 </body>
 </html>
