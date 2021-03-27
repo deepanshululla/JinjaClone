@@ -1,12 +1,13 @@
 from jinjaClone.grammar.JinjaLexer import JinjaLexer
 from jinjaClone.grammar.JinjaParser import JinjaParser
 from jinjaClone.grammar.JinjaVisitor import JinjaVisitor
-
+from jinjaClone.semantics.code_generator import CodeGenerator
 
 class JinjaAst(JinjaVisitor):
-    def __init__(self):
-        self.ns = {'name': 'deepanshu', 'age': 30,
-                   'image': "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_1280.jpg"}
+    def __init__(self, code_generator:CodeGenerator, namespace: dict = None):
+        self.ns = namespace or {'name': 'deepanshu', 'age': 30,
+                                'image': "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_1280.jpg"}
+        self.code_gen = code_generator
 
     def visitProgram(self, ctx: JinjaParser.ProgramContext):
         return super().visitProgram(ctx)
@@ -16,7 +17,7 @@ class JinjaAst(JinjaVisitor):
 
     def visitEvaluation_statement(self, ctx: JinjaParser.Evaluation_statementContext):
         value = self.visit(ctx.expression())
-        print(value, end='')
+        self.code_gen.append(value)
         return value
 
     def visitBody(self, ctx: JinjaParser.BodyContext):
@@ -135,7 +136,8 @@ class JinjaAst(JinjaVisitor):
         if ctx.html_element():
             return self.visit(ctx.html_element())
         if ctx.TEXT():
-            print(ctx.TEXT()[0].getText(), end='')
+            val = ctx.TEXT()[0].getText()
+            self.code_gen.append(val)
 
 
     def visitEqPar(self, ctx:JinjaParser.EqParContext):
@@ -154,7 +156,7 @@ class JinjaAst(JinjaVisitor):
             if isinstance(elem, JinjaParser.StatementContext):
                 self.visit(elem)
             else:
-                print(elem, end='')
+                self.code_gen.append(elem.getText())
 
     def visitWhile_statement(self, ctx: JinjaParser.While_statementContext):
         while self.visit(ctx.while_fragment()):
@@ -162,8 +164,7 @@ class JinjaAst(JinjaVisitor):
                 if isinstance(statement, JinjaParser.StatementContext):
                     self.visit(statement)
                 else:
-                    print(statement, end='')
-        return super().visitWhile_statement(ctx)
+                    self.code_gen.append(statement.getText())
 
     def visitWhile_fragment(self, ctx: JinjaParser.While_fragmentContext):
         return self.visit(ctx.boolean_expression())
