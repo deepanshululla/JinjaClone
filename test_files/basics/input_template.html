@@ -14,15 +14,15 @@
 {# this is a comment #}
 
 
-<p>
+<ol>
 I can support
-1 some negative ints like {{-5}}
-2 some doubles like {{5.5}}
-3 positive ints like {{4}}
-4 strings like {{'my string'}}
-5 multipication like {{4*5}}
-6 addition like {{4+5}}
-</p>
+    <li> some negative ints like {{-5}} </li>
+<li> some doubles like {{5.5}} </li>
+<li> positive ints like {{4}} </li>
+<li> strings like {{'my string'}} </li>
+<li> multipication like {{4*5}} </li>
+<li> addition like {{4+5}} </li>
+</ol>
 
 
 {% if (1==1) %}
@@ -43,10 +43,13 @@ I can support
 
 
 {% set (i=0) %}
+<ul>
 {% while (i<5) %}
-<p> my line {{i}} </p>
+<li> my line {{i}} </li>
 {% set (i=i+1) %}
 {% endwhile %}
+</ul>
+
 
 </body>
 </html>

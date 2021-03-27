@@ -1,4 +1,4 @@
-## Jinja Clone
+# Jinja Clone
 
 A toy templating engine written using python and Antlr.
 

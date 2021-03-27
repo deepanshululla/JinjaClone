@@ -13,7 +13,7 @@ docker_build:
 	docker tag ${IMG} ${LATEST}
 
 run:
-	PYTHONPATH=.. python ./bin/lang_bin.py -f ./test_input.txt
+	PYTHONPATH=.. python lang_bin.py  --directory=./test_files/basics --write
 
 docker_run: docker_build
 	docker container run ${IMG}
