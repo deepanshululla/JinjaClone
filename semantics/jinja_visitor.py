@@ -4,9 +4,8 @@ from jinjaClone.grammar.JinjaVisitor import JinjaVisitor
 from jinjaClone.semantics.code_generator import CodeGenerator
 
 class JinjaAst(JinjaVisitor):
-    def __init__(self, code_generator:CodeGenerator, namespace: dict = None):
-        self.ns = namespace or {'name': 'deepanshu', 'age': 30,
-                                'image': "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_1280.jpg"}
+    def __init__(self, code_generator:CodeGenerator, namespace: dict):
+        self.ns = namespace
         self.code_gen = code_generator
 
     def visitProgram(self, ctx: JinjaParser.ProgramContext):

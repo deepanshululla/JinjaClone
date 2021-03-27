@@ -19,10 +19,9 @@ uses [Antlr](https://www.antlr.org/) to create grammar as well as the abstact sy
 docker run deepanshululla/jinja_clone
 
 ```
-The above command assumes the directory is ./test_files/basics.
 
-To use this in your custom project, you need to have exactlu
-one json(namespace params) and temlate file.
+To use this in your custom project, you need to have exactly
+one json(namespace params) and template file.
 
 ```bash
 echo MY_DIR_LOCATION="my location for files"
